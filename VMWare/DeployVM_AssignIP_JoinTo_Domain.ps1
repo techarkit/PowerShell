@@ -173,7 +173,7 @@ Add-Computer -DomainName "$domainName" -OUPath "$ouPath" -Credential \$credentia
     Write-Output "Creating A record in Infoblox for '$vmName'..."
     $aRecordUri = "${infobloxServer}/wapi/v2.10/record:a"
     $aRecordBody = @{
-        name = "$vmName.corp.duracell.com"
+        name = "$vmName.<DOMAIN_NAME>"
         ipv4addr = $ipAddress
         ttl = 3600
     }
