@@ -34,8 +34,7 @@ $action = New-ScheduledTaskAction -Execute "C:\Windows\System32\WindowsPowerShel
 $trigger = New-ScheduledTaskTrigger -AtStartup
 $principal = New-ScheduledTaskPrincipal -UserId “NT AUTHORITY\SYSTEM” -LogonType Password -RunLevel Highest
 $settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -StartWhenAvailable
-
-
+Register-ScheduledTask -TaskName “Installation of Software" -Action $action -Trigger $trigger -Principal $principal -Settings $settings 
 
 
 Start-vm -VM <Name> -runAsync
@@ -47,4 +46,3 @@ do
   Start-Sleep -Seconds 5;
   $toolsStatus = $vm.extensionData.Guest.ToolsStatus;
 }while($toolsStatus -ne "toolsOK");
-Register-ScheduledTask -TaskName “Installation of Software" -Action $action -Trigger $trigger -Principal $principal -Settings $settings 
