@@ -4,7 +4,7 @@
 | Parameter               |      Required | Default               | Description                                          |
 | ----------------------- | ------------: | --------------------- | ---------------------------------------------------- |
 | `-ServerListPath`       |           Yes | None                  | TXT or CSV file containing server names/IP addresses |
-| `-Token`                |           No* | `$env:NCPA_API_TOKEN` | NCPA API/community token                             |
+| `-Token`                |           Yes* | `$env:NCPA_API_TOKEN` | NCPA API/community token                             |
 | `-Port`                 |            No | `5693`                | NCPA listener port                                   |
 | `-TimeoutSeconds`       |            No | `30`                  | Maximum API request time per server                  |
 | `-OutputFolder`         |            No | `NCPA-Disk-Reports`   | CSV and log destination                              |
